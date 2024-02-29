@@ -1,18 +1,19 @@
 package statistics
 
-type statisticOperation func(values ...int) (int)
+type statisticOperation func(values ...int) int
 type statisticOperator string
+
 const (
 	Minimum statisticOperator = "minimum"
 	Average statisticOperator = "average"
 	Maximum statisticOperator = "maximum"
 )
 
-func main()  {
-	
+func main() {
+
 }
 
-func Operation(operator statisticOperator) (operation statisticOperation, err string)  {
+func Operation(operator statisticOperator) (operation statisticOperation, err string) {
 	switch operator {
 	case Minimum:
 		operation = minValue
@@ -23,35 +24,35 @@ func Operation(operator statisticOperator) (operation statisticOperation, err st
 	default:
 		err = "Operacion no definida"
 	}
-	return 
+	return
 }
 
-func minValue(values ...int) (minValue int){
+func minValue(values ...int) (minValue int) {
 	minValue = values[0]
 	for _, value := range values {
-		if(value < minValue) {
+		if value < minValue {
 			minValue = value
 		}
 	}
 	return
 }
 
-func maxValue(values ...int) (maxValue int){
+func maxValue(values ...int) (maxValue int) {
 	for _, value := range values {
-		if(value > maxValue) {
+		if value > maxValue {
 			maxValue = value
 		}
 	}
 	return
 }
 
-func averageValue(values ...int) int{
-	return sum(values)/len(values)
+func averageValue(values ...int) int {
+	return sum(values) / len(values)
 }
 
 func sum(values []int) (result int) {
 	for _, value := range values {
-		if(value > 0){
+		if value > 0 {
 			result += value
 		}
 	}

@@ -1,17 +1,17 @@
 package animals
 
 type Animal string
-type foodForAnimal func(float64) (float64)
+type foodForAnimal func(float64) float64
 type FoodByAnimal = float64
 
 const (
-	Dog Animal = "dog"
-	Cat Animal= "cat"
-	Tarantula Animal = "tarantula"
-	Hamster Animal = "hamster"
-	foodByCat FoodByAnimal = 5
-	foodByDog FoodByAnimal = 10
-	foodByHamster FoodByAnimal = 0.250
+	Dog             Animal       = "dog"
+	Cat             Animal       = "cat"
+	Tarantula       Animal       = "tarantula"
+	Hamster         Animal       = "hamster"
+	foodByCat       FoodByAnimal = 5
+	foodByDog       FoodByAnimal = 10
+	foodByHamster   FoodByAnimal = 0.250
 	foodByTarantula FoodByAnimal = 0.150
 )
 
