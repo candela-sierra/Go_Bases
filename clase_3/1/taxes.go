@@ -1,16 +1,12 @@
-package main
+package taxes
 
-func main () {
-
-}
-
-func taxes (salary int) (tax int){
+func Taxes (salary int) (tax int){
 	switch {
-	case salary > 50000:
-		tax+= percentage(salary, 17)
-		fallthrough
 	case salary > 150000:
 		tax += percentage(salary, 10)
+		fallthrough
+	case salary > 50000:
+		tax+= percentage(salary, 17)
 	}
 	return
 }

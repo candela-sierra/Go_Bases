@@ -1,24 +1,24 @@
-package main
+package statistics
 
 type statisticOperation func(values ...int) (int)
 type statisticOperator string
 const (
-	minimum statisticOperator = "minimum"
-	average statisticOperator = "average"
-	maximum statisticOperator = "maximum"
+	Minimum statisticOperator = "minimum"
+	Average statisticOperator = "average"
+	Maximum statisticOperator = "maximum"
 )
 
 func main()  {
 	
 }
 
-func operation(operator statisticOperator) (operation statisticOperation, err string)  {
+func Operation(operator statisticOperator) (operation statisticOperation, err string)  {
 	switch operator {
-	case minimum:
+	case Minimum:
 		operation = minValue
-	case maximum:
+	case Maximum:
 		operation = maxValue
-	case average:
+	case Average:
 		operation = averageValue
 	default:
 		err = "Operacion no definida"

@@ -1,33 +1,29 @@
-package main
+package animals
 
 type Animal string
 type foodForAnimal func(float64) (float64)
 type FoodByAnimal = float64
 
 const (
-	dog Animal = "dog"
-	cat Animal= "cat"
-	tarantula Animal = "tarantula"
-	hamster Animal = "hamster"
+	Dog Animal = "dog"
+	Cat Animal= "cat"
+	Tarantula Animal = "tarantula"
+	Hamster Animal = "hamster"
 	foodByCat FoodByAnimal = 5
 	foodByDog FoodByAnimal = 10
 	foodByHamster FoodByAnimal = 0.250
 	foodByTarantula FoodByAnimal = 0.150
 )
 
-func main()  {
-	
-}
-
-func foodFor(animal Animal) (foodFor foodForAnimal, err string) {
+func FoodFor(animal Animal) (foodFor foodForAnimal, err string) {
 	switch animal {
-	case cat:
+	case Cat:
 		foodFor = foodForCats
-	case dog:
+	case Dog:
 		foodFor = foodForDogs
-	case tarantula:
+	case Tarantula:
 		foodFor = foodForTarantulas
-	case hamster:
+	case Hamster:
 		foodFor = foodForHamsters
 	default:
 		err = "Unknown Animal"

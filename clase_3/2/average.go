@@ -1,11 +1,7 @@
-package main
+package average
 import "fmt"
 
-func main() {
-
-}
-
-func average(values ...int) int{
+func Average(values ...int) int{
 	return sum(values)/len(values)
 }
 
